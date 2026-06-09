@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>National Boxing Championship 2026 · Bracket · ISL 2026</title>
+    <meta name="description" content="The Indian Sports League — national multi-sport competition. Athlete registration, live schedules, brackets, results and digital certification.">
+    <link rel="preload" as="style" href="assets/app-CTcM-v1l.css" /><link rel="stylesheet" href="assets/app-CTcM-v1l.css" /><script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script></head>
+<body class="min-h-screen bg-ink-50">
+    <header x-data="{ open: false }" class="sticky top-0 z-50 border-b border-ink-100 bg-white/85 backdrop-blur-md">
+    <nav class="container-x flex h-18 items-center justify-between py-3">
+        <a href="index.html" class="inline-flex items-center gap-2.5">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+        IS<span class="text-victory-400">L</span>
+    </span>
+    <span class="leading-tight">
+        <span class="block font-display text-lg font-800 text-ink-900">Indian Sports League</span>
+        <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-400">Season 2026</span>
+    </span>
+</a>
+
+        <div class="hidden items-center gap-1 lg:flex">
+                            <a href="sports.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Sports
+                </a>
+                            <a href="schedule.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Schedule
+                </a>
+                            <a href="schedule.html#brackets"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Brackets
+                </a>
+                            <a href="standings.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Standings
+                </a>
+                            <a href="news.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    News
+                </a>
+                            <a href="certificates.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Certificates
+                </a>
+                    </div>
+
+        <div class="flex items-center gap-2">
+            <a href="register.html" class="btn-primary btn-sm hidden sm:inline-flex">
+                Register as athlete
+            </a>
+            <a href="admin-login.html" class="btn-ghost btn-sm hidden md:inline-flex">Admin</a>
+            <button @click="open = !open" class="grid h-10 w-10 place-items-center rounded-xl border border-ink-200 lg:hidden" aria-label="Menu">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div x-show="open" x-cloak class="border-t border-ink-100 bg-white lg:hidden">
+        <div class="container-x grid gap-1 py-4">
+                            <a href="sports.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Sports</a>
+                            <a href="schedule.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Schedule</a>
+                            <a href="schedule.html#brackets" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Brackets</a>
+                            <a href="standings.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Standings</a>
+                            <a href="news.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">News</a>
+                            <a href="certificates.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Certificates</a>
+                        <a href="register.html" class="btn-primary mt-2">Register as athlete</a>
+            <a href="admin-login.html" class="btn-ghost mt-1">Admin panel</a>
+        </div>
+    </div>
+</header>
+
+    <main>
+            <section class="relative overflow-hidden bg-gradient-to-br from-saffron-600 to-ink-900 text-white">
+    <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-saffron-500/15 blur-3xl"></div>
+    <div class="container-x relative py-14 sm:py-16">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-300">Boxing · knockout</p>
+                <h1 class="mt-2 font-display text-4xl font-900 leading-tight sm:text-5xl">National Boxing Championship 2026</h1>
+                            <div class="mt-6"><a href="event.html" class="btn bg-white/10 px-5 py-2.5 text-sm text-white hover:bg-white/20">← Event hub</a></div>
+            </div>
+</section>
+
+    <section class="py-14">
+        <div class="container-x">
+            <h2 class="font-display text-2xl font-800 text-ink-900">Single-elimination bracket</h2>
+            <p class="mt-1 text-sm text-ink-500">Winners advance left to right. Scroll horizontally to follow the draw to the final.</p>
+        </div>
+
+        <div class="mt-8 overflow-x-auto pb-6">
+            <div class="container-x flex min-w-max gap-8">
+                                    <div class="flex w-72 flex-col">
+                        <h3 class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-ink-400">
+                            Quarter-final
+                        </h3>
+                        <div class="flex flex-1 flex-col justify-around gap-6">
+                                                            <div class="card overflow-hidden ">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>28 Jun · 14:00</span>
+                                        <span class="chip bg-victory-500/10 text-victory-700 !px-2 !py-0.5">
+        Completed
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 bg-victory-500/10">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-400 to-saffron-600 font-display font-800 text-white h-9 w-9 text-xs">
+    AS
+</span>
+                                                <span class="flex-1 truncate text-sm font-bold text-ink-900">Arjun Singh</span>
+                                                                                                    <span class="text-victory-600">✓</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">5</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-500 to-ink-800 font-display font-800 text-white h-9 w-9 text-xs">
+    VP
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Vikram Patel</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">0</span>
+                                                                                    </div>
+                                                                    </div>
+                                                            <div class="card overflow-hidden ">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>28 Jun · 15:00</span>
+                                        <span class="chip bg-victory-500/10 text-victory-700 !px-2 !py-0.5">
+        Completed
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-victory-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    RD
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Rahul Das</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">0</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 bg-victory-500/10">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-500 to-ink-700 font-display font-800 text-white h-9 w-9 text-xs">
+    SB
+</span>
+                                                <span class="flex-1 truncate text-sm font-bold text-ink-900">Sandeep Borgohain</span>
+                                                                                                    <span class="text-victory-600">✓</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">5</span>
+                                                                                    </div>
+                                                                    </div>
+                                                            <div class="card overflow-hidden ">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>28 Jun · 16:00</span>
+                                        <span class="chip bg-victory-500/10 text-victory-700 !px-2 !py-0.5">
+        Completed
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 bg-victory-500/10">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    MB
+</span>
+                                                <span class="flex-1 truncate text-sm font-bold text-ink-900">Manish Boora</span>
+                                                                                                    <span class="text-victory-600">✓</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">5</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-400 to-saffron-600 font-display font-800 text-white h-9 w-9 text-xs">
+    DD
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Deepak Dahiya</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">0</span>
+                                                                                    </div>
+                                                                    </div>
+                                                            <div class="card overflow-hidden ">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>28 Jun · 17:00</span>
+                                        <span class="chip bg-victory-500/10 text-victory-700 !px-2 !py-0.5">
+        Completed
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-500 to-ink-800 font-display font-800 text-white h-9 w-9 text-xs">
+    RL
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Rohit Lal</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">0</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 bg-victory-500/10">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-victory-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    KM
+</span>
+                                                <span class="flex-1 truncate text-sm font-bold text-ink-900">Karan Mondal</span>
+                                                                                                    <span class="text-victory-600">✓</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">5</span>
+                                                                                    </div>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                                    <div class="flex w-72 flex-col">
+                        <h3 class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-ink-400">
+                            Semi-final
+                        </h3>
+                        <div class="flex flex-1 flex-col justify-around gap-6">
+                                                            <div class="card overflow-hidden ring-2 ring-rose-400">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>30 Jun · 17:00</span>
+                                        <span class="chip bg-rose-100 text-rose-700 !px-2 !py-0.5">
+            <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500"></span>
+        ● Live
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-400 to-saffron-600 font-display font-800 text-white h-9 w-9 text-xs">
+    AS
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Arjun Singh</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">2</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-500 to-ink-700 font-display font-800 text-white h-9 w-9 text-xs">
+    SB
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Sandeep Borgohain</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">1</span>
+                                                                                    </div>
+                                                                    </div>
+                                                            <div class="card overflow-hidden ">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>30 Jun · 18:00</span>
+                                        <span class="chip bg-ink-100 text-ink-600 !px-2 !py-0.5">
+        Scheduled
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    MB
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Manish Boora</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">–</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-victory-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    KM
+</span>
+                                                <span class="flex-1 truncate text-sm text-ink-600">Karan Mondal</span>
+                                                                                                <span class="font-display text-base font-800 text-ink-900">–</span>
+                                                                                    </div>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                                    <div class="flex w-72 flex-col">
+                        <h3 class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-ink-400">
+                            Final
+                        </h3>
+                        <div class="flex flex-1 flex-col justify-around gap-6">
+                                                            <div class="card overflow-hidden ">
+                                    <div class="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-xs text-ink-400">
+                                        <span>02 Jul · 19:00</span>
+                                        <span class="chip bg-ink-100 text-ink-600 !px-2 !py-0.5">
+        Scheduled
+</span>
+                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink-100 text-xs text-ink-400">?</span>
+                                                <span class="flex-1 text-sm italic text-ink-400">Awaiting winner</span>
+                                                                                    </div>
+                                                                            <div class="flex items-center gap-2 px-4 py-2.5 ">
+                                                                                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink-100 text-xs text-ink-400">?</span>
+                                                <span class="flex-1 text-sm italic text-ink-400">Awaiting winner</span>
+                                                                                    </div>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                
+                
+                                <div class="flex w-60 flex-col justify-center">
+                    <h3 class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-saffron-500">Champion</h3>
+                    <div class="rounded-2xl bg-gradient-to-br from-saffron-500 to-saffron-700 p-6 text-center text-white shadow-lg shadow-saffron-500/30">
+                        <p class="text-3xl">🏆</p>
+                                                    <p class="mt-4 text-sm text-saffron-100">To be decided in the final</p>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="mt-24 bg-ink-950 text-ink-300">
+    <div class="container-x grid gap-10 py-16 md:grid-cols-4">
+        <div class="md:col-span-1">
+            <a href="index.html" class="inline-flex items-center gap-2.5">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+        IS<span class="text-victory-400">L</span>
+    </span>
+    <span class="leading-tight">
+        <span class="block font-display text-lg font-800 text-white">Indian Sports League</span>
+        <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-300">Season 2026</span>
+    </span>
+</a>
+            <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
+                A unified digital platform for India's national multi-sport competition — registration, scheduling, live results and verified certification.
+            </p>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Compete</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="sports.html" class="hover:text-saffron-400">Sports</a></li>
+                <li><a href="schedule.html" class="hover:text-saffron-400">Schedule &amp; fixtures</a></li>
+                <li><a href="standings.html" class="hover:text-saffron-400">Medal tally</a></li>
+                <li><a href="register.html" class="hover:text-saffron-400">Athlete registration</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">League</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="news.html" class="hover:text-saffron-400">News &amp; media</a></li>
+                <li><a href="certificates.html" class="hover:text-saffron-400">Verify a certificate</a></li>
+                <li><a href="admin-login.html" class="hover:text-saffron-400">Organiser login</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Partners</h4>
+            <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                <span class="rounded-lg bg-white/5 px-3 py-2">Sports Authority of India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">Khelo India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">Fit India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">National Federations</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-white/10">
+        <div class="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-ink-500 sm:flex-row">
+            <p>© 2026 Indian Sports League. Prototype for client demonstration.</p>
+            <p class="flex items-center gap-1.5">
+                <span class="inline-block h-2 w-2 rounded-full bg-victory-400"></span>
+                Tricolour by design · Built for Indian sport
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

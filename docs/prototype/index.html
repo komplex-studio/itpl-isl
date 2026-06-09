@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home · ISL 2026</title>
+    <meta name="description" content="The Indian Sports League — national multi-sport competition. Athlete registration, live schedules, brackets, results and digital certification.">
+    <link rel="preload" as="style" href="assets/app-CTcM-v1l.css" /><link rel="stylesheet" href="assets/app-CTcM-v1l.css" /><script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script></head>
+<body class="min-h-screen bg-ink-50">
+    <header x-data="{ open: false }" class="sticky top-0 z-50 border-b border-ink-100 bg-white/85 backdrop-blur-md">
+    <nav class="container-x flex h-18 items-center justify-between py-3">
+        <a href="index.html" class="inline-flex items-center gap-2.5">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+        IS<span class="text-victory-400">L</span>
+    </span>
+    <span class="leading-tight">
+        <span class="block font-display text-lg font-800 text-ink-900">Indian Sports League</span>
+        <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-400">Season 2026</span>
+    </span>
+</a>
+
+        <div class="hidden items-center gap-1 lg:flex">
+                            <a href="sports.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Sports
+                </a>
+                            <a href="schedule.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Schedule
+                </a>
+                            <a href="schedule.html#brackets"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Brackets
+                </a>
+                            <a href="standings.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Standings
+                </a>
+                            <a href="news.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    News
+                </a>
+                            <a href="certificates.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Certificates
+                </a>
+                    </div>
+
+        <div class="flex items-center gap-2">
+            <a href="register.html" class="btn-primary btn-sm hidden sm:inline-flex">
+                Register as athlete
+            </a>
+            <a href="admin-login.html" class="btn-ghost btn-sm hidden md:inline-flex">Admin</a>
+            <button @click="open = !open" class="grid h-10 w-10 place-items-center rounded-xl border border-ink-200 lg:hidden" aria-label="Menu">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div x-show="open" x-cloak class="border-t border-ink-100 bg-white lg:hidden">
+        <div class="container-x grid gap-1 py-4">
+                            <a href="sports.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Sports</a>
+                            <a href="schedule.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Schedule</a>
+                            <a href="schedule.html#brackets" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Brackets</a>
+                            <a href="standings.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Standings</a>
+                            <a href="news.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">News</a>
+                            <a href="certificates.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Certificates</a>
+                        <a href="register.html" class="btn-primary mt-2">Register as athlete</a>
+            <a href="admin-login.html" class="btn-ghost mt-1">Admin panel</a>
+        </div>
+    </div>
+</header>
+
+    <main>
+            
+    <section class="relative overflow-hidden bg-ink-950 text-white">
+        <div class="absolute inset-0 bg-gradient-to-br from-saffron-600 to-ink-900 opacity-90"></div>
+        <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-saffron-500/20 blur-3xl"></div>
+        <div class="absolute -bottom-32 left-1/4 h-96 w-96 rounded-full bg-victory-500/10 blur-3xl"></div>
+
+        <div class="container-x relative grid gap-12 py-20 lg:grid-cols-12 lg:py-28">
+            <div class="lg:col-span-7">
+                <span class="chip bg-white/10 text-white backdrop-blur">
+                    <span class="inline-block h-1.5 w-1.5 rounded-full bg-victory-400"></span>
+                    Season 2026 · 8 disciplines · 28 states
+                </span>
+                <h1 class="mt-6 font-display text-5xl font-900 leading-[0.95] sm:text-6xl lg:text-7xl">
+                    Where India<br><span class="text-saffron-400">competes.</span>
+                </h1>
+                <p class="mt-6 max-w-xl text-lg text-ink-200">
+                    One platform for the nation's biggest multi-sport league — register as an athlete, follow live brackets and results, and download verified certificates.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="register.html" class="btn-primary">Register as athlete</a>
+                    <a href="schedule.html" class="btn bg-white/10 px-6 py-3 text-white backdrop-blur transition hover:bg-white/20">View schedule</a>
+                </div>
+            </div>
+
+                            <div class="lg:col-span-5">
+                    <div class="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-md">
+                        <div class="flex items-center justify-between">
+                            <span class="text-4xl">🥊</span>
+                            <span class="chip bg-rose-100 text-rose-700">
+            <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500"></span>
+        Live now
+</span>
+                        </div>
+                        <p class="mt-4 text-xs font-bold uppercase tracking-widest text-saffron-300">Boxing</p>
+                        <h2 class="mt-1 font-display text-2xl font-800 leading-tight text-white">National Boxing Championship 2026</h2>
+                        <dl class="mt-5 grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <dt class="text-ink-300">Venue</dt>
+                                <dd class="font-semibold text-white">Nahan, Himachal Pradesh</dd>
+                            </div>
+                            <div>
+                                <dt class="text-ink-300">Dates</dt>
+                                <dd class="font-semibold text-white">28 Jun – 03 Jul 2026</dd>
+                            </div>
+                            <div>
+                                <dt class="text-ink-300">Prize pool</dt>
+                                <dd class="font-semibold text-white">₹25.0L</dd>
+                            </div>
+                            <div>
+                                <dt class="text-ink-300">Format</dt>
+                                <dd class="font-semibold capitalize text-white">knockout</dd>
+                            </div>
+                        </dl>
+                        <a href="event.html" class="btn-primary btn-sm mt-6 w-full">Open event hub</a>
+                    </div>
+                </div>
+                    </div>
+
+        
+        <div class="relative border-t border-white/10 bg-ink-950/40 backdrop-blur">
+            <div class="container-x grid grid-cols-2 gap-6 py-8 sm:grid-cols-4">
+                                    <div>
+                        <p class="font-display text-3xl font-900 text-saffron-400">48+</p>
+                        <p class="mt-1 text-sm text-ink-300">Registered athletes</p>
+                    </div>
+                                    <div>
+                        <p class="font-display text-3xl font-900 text-saffron-400">6</p>
+                        <p class="mt-1 text-sm text-ink-300">Live events</p>
+                    </div>
+                                    <div>
+                        <p class="font-display text-3xl font-900 text-saffron-400">8</p>
+                        <p class="mt-1 text-sm text-ink-300">Sports</p>
+                    </div>
+                                    <div>
+                        <p class="font-display text-3xl font-900 text-saffron-400">70+</p>
+                        <p class="mt-1 text-sm text-ink-300">Entries this season</p>
+                    </div>
+                            </div>
+        </div>
+    </section>
+
+    
+    <section class="container-x py-20">
+        <div class="flex items-end justify-between">
+            <div>
+                <p class="eyebrow">Disciplines</p>
+                <h2 class="mt-2 font-display text-3xl font-800 text-ink-900 sm:text-4xl">Eight sports, one league</h2>
+            </div>
+            <a href="sports.html" class="hidden text-sm font-semibold text-saffron-600 hover:text-saffron-700 sm:inline">All sports →</a>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            <a href="sport-boxing.html" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🥊</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Boxing</h3>
+                    <p class="mt-1 text-sm text-ink-500">Punch above your weight</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">1 event · Knockout</p>
+                </a>
+                            <a href="sports.html/wrestling" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🤼</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Wrestling</h3>
+                    <p class="mt-1 text-sm text-ink-500">Grit on the mat</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">1 event · Knockout</p>
+                </a>
+                            <a href="sports.html/kabaddi" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🤾</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Kabaddi</h3>
+                    <p class="mt-1 text-sm text-ink-500">Raid. Tackle. Repeat.</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">1 event · League</p>
+                </a>
+                            <a href="sports.html/athletics" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🏃</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Athletics</h3>
+                    <p class="mt-1 text-sm text-ink-500">Faster, higher, stronger</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">1 event · League</p>
+                </a>
+                            <a href="sports.html/badminton" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🏸</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Badminton</h3>
+                    <p class="mt-1 text-sm text-ink-500">Smash your limits</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">1 event · Knockout</p>
+                </a>
+                            <a href="sports.html/weightlifting" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🏋️</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Weightlifting</h3>
+                    <p class="mt-1 text-sm text-ink-500">Lift for the nation</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">1 event · League</p>
+                </a>
+                            <a href="sports.html/table-tennis" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🏓</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Table Tennis</h3>
+                    <p class="mt-1 text-sm text-ink-500">Spin to win</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">0 events · Knockout</p>
+                </a>
+                            <a href="sports.html/kho-kho" class="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                    <span class="text-4xl">🏃‍♀️</span>
+                    <h3 class="mt-4 font-display text-xl font-800 text-ink-900 group-hover:text-saffron-600">Kho Kho</h3>
+                    <p class="mt-1 text-sm text-ink-500">Chase the glory</p>
+                    <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-ink-400">0 events · League</p>
+                </a>
+                    </div>
+    </section>
+
+    
+    <section class="bg-white py-20">
+        <div class="container-x grid gap-12 lg:grid-cols-2">
+            <div>
+                <p class="eyebrow">On the calendar</p>
+                <h2 class="mt-2 font-display text-3xl font-800 text-ink-900">Upcoming events</h2>
+                <div class="mt-8 space-y-4">
+                                            <a href="event.html" class="flex items-center gap-4 rounded-2xl border border-ink-100 p-4 transition hover:border-saffron-300 hover:bg-saffron-50/40">
+                            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-ink-50 text-2xl">🥊</span>
+                            <div class="min-w-0 flex-1">
+                                <p class="truncate font-display text-base font-700 text-ink-900">National Boxing Championship 2026</p>
+                                <p class="text-sm text-ink-500">Nahan, Himachal Pradesh · 28 Jun – 03 Jul 2026</p>
+                            </div>
+                            <span class="chip bg-rose-100 text-rose-700">
+            <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500"></span>
+        Live now
+</span>
+                        </a>
+                                            <a href="index.htmlevents/bharat-kesari-wrestling-open-2026" class="flex items-center gap-4 rounded-2xl border border-ink-100 p-4 transition hover:border-saffron-300 hover:bg-saffron-50/40">
+                            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-ink-50 text-2xl">🤼</span>
+                            <div class="min-w-0 flex-1">
+                                <p class="truncate font-display text-base font-700 text-ink-900">Bharat Kesari Wrestling Open 2026</p>
+                                <p class="text-sm text-ink-500">Sonipat, Haryana · 14–19 Jul 2026</p>
+                            </div>
+                            <span class="chip bg-ink-100 text-ink-600">
+        Upcoming
+</span>
+                        </a>
+                                            <a href="index.htmlevents/national-weightlifting-cup-2026" class="flex items-center gap-4 rounded-2xl border border-ink-100 p-4 transition hover:border-saffron-300 hover:bg-saffron-50/40">
+                            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-ink-50 text-2xl">🏋️</span>
+                            <div class="min-w-0 flex-1">
+                                <p class="truncate font-display text-base font-700 text-ink-900">National Weightlifting Cup 2026</p>
+                                <p class="text-sm text-ink-500">Imphal, Manipur · 22–25 Jul 2026</p>
+                            </div>
+                            <span class="chip bg-ink-100 text-ink-600">
+        Upcoming
+</span>
+                        </a>
+                                            <a href="index.htmlevents/pro-kabaddi-national-series-2026" class="flex items-center gap-4 rounded-2xl border border-ink-100 p-4 transition hover:border-saffron-300 hover:bg-saffron-50/40">
+                            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-ink-50 text-2xl">🤾</span>
+                            <div class="min-w-0 flex-1">
+                                <p class="truncate font-display text-base font-700 text-ink-900">Pro Kabaddi National Series 2026</p>
+                                <p class="text-sm text-ink-500">Patna, Bihar · 02–12 Aug 2026</p>
+                            </div>
+                            <span class="chip bg-ink-100 text-ink-600">
+        Upcoming
+</span>
+                        </a>
+                                    </div>
+                <a href="schedule.html" class="btn-ghost btn-sm mt-6">Full schedule</a>
+            </div>
+
+            <div>
+                <p class="eyebrow">From the arena</p>
+                <h2 class="mt-2 font-display text-3xl font-800 text-ink-900">Latest results</h2>
+                <div class="mt-8 space-y-4">
+                                            <div class="rounded-2xl border border-ink-100 p-4">
+                            <div class="flex items-center justify-between text-xs text-ink-400">
+                                <span>🥊 National Boxing Championship 2026</span>
+                                <span>Quarter-final</span>
+                            </div>
+                            <div class="mt-3 space-y-2">
+                                                                                                            <div class="flex items-center gap-3 text-ink-500">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-500 to-ink-800 font-display font-800 text-white h-9 w-9 text-xs">
+    RL
+</span>
+                                            <span class="flex-1 truncate">Rohit Lal</span>
+                                                                                        <span class="font-display text-lg font-800">0</span>
+                                        </div>
+                                                                                                                                                <div class="flex items-center gap-3 font-bold text-ink-900">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-victory-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    KM
+</span>
+                                            <span class="flex-1 truncate">Karan Mondal</span>
+                                                                                            <span class="chip-victory">WON</span>
+                                                                                        <span class="font-display text-lg font-800">5</span>
+                                        </div>
+                                                                                                </div>
+                        </div>
+                                            <div class="rounded-2xl border border-ink-100 p-4">
+                            <div class="flex items-center justify-between text-xs text-ink-400">
+                                <span>🥊 National Boxing Championship 2026</span>
+                                <span>Quarter-final</span>
+                            </div>
+                            <div class="mt-3 space-y-2">
+                                                                                                            <div class="flex items-center gap-3 font-bold text-ink-900">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    MB
+</span>
+                                            <span class="flex-1 truncate">Manish Boora</span>
+                                                                                            <span class="chip-victory">WON</span>
+                                                                                        <span class="font-display text-lg font-800">5</span>
+                                        </div>
+                                                                                                                                                <div class="flex items-center gap-3 text-ink-500">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-400 to-saffron-600 font-display font-800 text-white h-9 w-9 text-xs">
+    DD
+</span>
+                                            <span class="flex-1 truncate">Deepak Dahiya</span>
+                                                                                        <span class="font-display text-lg font-800">0</span>
+                                        </div>
+                                                                                                </div>
+                        </div>
+                                            <div class="rounded-2xl border border-ink-100 p-4">
+                            <div class="flex items-center justify-between text-xs text-ink-400">
+                                <span>🥊 National Boxing Championship 2026</span>
+                                <span>Quarter-final</span>
+                            </div>
+                            <div class="mt-3 space-y-2">
+                                                                                                            <div class="flex items-center gap-3 text-ink-500">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-victory-400 to-victory-600 font-display font-800 text-white h-9 w-9 text-xs">
+    RD
+</span>
+                                            <span class="flex-1 truncate">Rahul Das</span>
+                                                                                        <span class="font-display text-lg font-800">0</span>
+                                        </div>
+                                                                                                                                                <div class="flex items-center gap-3 font-bold text-ink-900">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-500 to-ink-700 font-display font-800 text-white h-9 w-9 text-xs">
+    SB
+</span>
+                                            <span class="flex-1 truncate">Sandeep Borgohain</span>
+                                                                                            <span class="chip-victory">WON</span>
+                                                                                        <span class="font-display text-lg font-800">5</span>
+                                        </div>
+                                                                                                </div>
+                        </div>
+                                            <div class="rounded-2xl border border-ink-100 p-4">
+                            <div class="flex items-center justify-between text-xs text-ink-400">
+                                <span>🥊 National Boxing Championship 2026</span>
+                                <span>Quarter-final</span>
+                            </div>
+                            <div class="mt-3 space-y-2">
+                                                                                                            <div class="flex items-center gap-3 font-bold text-ink-900">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-saffron-400 to-saffron-600 font-display font-800 text-white h-9 w-9 text-xs">
+    AS
+</span>
+                                            <span class="flex-1 truncate">Arjun Singh</span>
+                                                                                            <span class="chip-victory">WON</span>
+                                                                                        <span class="font-display text-lg font-800">5</span>
+                                        </div>
+                                                                                                                                                <div class="flex items-center gap-3 text-ink-500">
+                                            <span class="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-ink-500 to-ink-800 font-display font-800 text-white h-9 w-9 text-xs">
+    VP
+</span>
+                                            <span class="flex-1 truncate">Vikram Patel</span>
+                                                                                        <span class="font-display text-lg font-800">0</span>
+                                        </div>
+                                                                                                </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="container-x py-20">
+        <div class="rounded-3xl bg-ink-950 p-8 text-white sm:p-12">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="eyebrow text-saffron-400">Medal tally</p>
+                    <h2 class="mt-2 font-display text-3xl font-800">Leading states · Season 2026</h2>
+                </div>
+                <a href="standings.html" class="btn bg-white/10 px-5 py-2.5 text-sm text-white hover:bg-white/20">Full standings →</a>
+            </div>
+
+            <div class="mt-8 overflow-hidden rounded-2xl border border-white/10">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-white/5 text-xs uppercase tracking-wider text-ink-300">
+                        <tr>
+                            <th class="px-5 py-3">Rank</th>
+                            <th class="px-5 py-3">State</th>
+                            <th class="px-5 py-3 text-center">🥇</th>
+                            <th class="px-5 py-3 text-center">🥈</th>
+                            <th class="px-5 py-3 text-center">🥉</th>
+                            <th class="px-5 py-3 text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5">
+                                                    <tr class="bg-saffron-500/10">
+                                <td class="px-5 py-3 font-display font-800 text-saffron-400">1</td>
+                                <td class="px-5 py-3 font-semibold text-white">Haryana</td>
+                                <td class="px-5 py-3 text-center">14</td>
+                                <td class="px-5 py-3 text-center">9</td>
+                                <td class="px-5 py-3 text-center">11</td>
+                                <td class="px-5 py-3 text-right font-display font-800 text-saffron-400">34</td>
+                            </tr>
+                                                    <tr class="">
+                                <td class="px-5 py-3 font-display font-800 text-ink-300">2</td>
+                                <td class="px-5 py-3 font-semibold text-white">Punjab</td>
+                                <td class="px-5 py-3 text-center">11</td>
+                                <td class="px-5 py-3 text-center">12</td>
+                                <td class="px-5 py-3 text-center">8</td>
+                                <td class="px-5 py-3 text-right font-display font-800 text-saffron-400">31</td>
+                            </tr>
+                                                    <tr class="">
+                                <td class="px-5 py-3 font-display font-800 text-ink-300">3</td>
+                                <td class="px-5 py-3 font-semibold text-white">Manipur</td>
+                                <td class="px-5 py-3 text-center">10</td>
+                                <td class="px-5 py-3 text-center">7</td>
+                                <td class="px-5 py-3 text-center">9</td>
+                                <td class="px-5 py-3 text-right font-display font-800 text-saffron-400">26</td>
+                            </tr>
+                                                    <tr class="">
+                                <td class="px-5 py-3 font-display font-800 text-ink-300">4</td>
+                                <td class="px-5 py-3 font-semibold text-white">Kerala</td>
+                                <td class="px-5 py-3 text-center">8</td>
+                                <td class="px-5 py-3 text-center">10</td>
+                                <td class="px-5 py-3 text-center">12</td>
+                                <td class="px-5 py-3 text-right font-display font-800 text-saffron-400">30</td>
+                            </tr>
+                                                    <tr class="">
+                                <td class="px-5 py-3 font-display font-800 text-ink-300">5</td>
+                                <td class="px-5 py-3 font-semibold text-white">Maharashtra</td>
+                                <td class="px-5 py-3 text-center">7</td>
+                                <td class="px-5 py-3 text-center">9</td>
+                                <td class="px-5 py-3 text-center">13</td>
+                                <td class="px-5 py-3 text-right font-display font-800 text-saffron-400">29</td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="bg-white py-20">
+        <div class="container-x">
+            <div class="flex items-end justify-between">
+                <div>
+                    <p class="eyebrow">Newsroom</p>
+                    <h2 class="mt-2 font-display text-3xl font-800 text-ink-900">Latest from the league</h2>
+                </div>
+                <a href="news.html" class="hidden text-sm font-semibold text-saffron-600 hover:text-saffron-700 sm:inline">All news →</a>
+            </div>
+
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+                                    <a href="news.html/kabaddi-national-series-to-feature-12-state-franchises" class="card group overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+                        <div class="aspect-[16/9] bg-gradient-to-br from-victory-600 to-ink-900 p-5">
+                            <span class="chip bg-white/20 text-white backdrop-blur">Kabaddi</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-ink-400">11 Jun 2026</p>
+                            <h3 class="mt-2 font-display text-lg font-700 leading-snug text-ink-900 group-hover:text-saffron-600">Kabaddi National Series to feature 12 state franchises</h3>
+                            <p class="mt-2 line-clamp-2 text-sm text-ink-500">The Pro Kabaddi National Series returns to Patna with twelve franchises battling over ten days of raids and tackles.</p>
+                        </div>
+                    </a>
+                                    <a href="news.html/every-participant-to-receive-a-verifiable-digital-certificate" class="card group overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+                        <div class="aspect-[16/9] bg-gradient-to-br from-saffron-600 to-ink-900 p-5">
+                            <span class="chip bg-white/20 text-white backdrop-blur">Certification</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-ink-400">09 Jun 2026</p>
+                            <h3 class="mt-2 font-display text-lg font-700 leading-snug text-ink-900 group-hover:text-saffron-600">Every participant to receive a verifiable digital certificate</h3>
+                            <p class="mt-2 line-clamp-2 text-sm text-ink-500">Each athlete receives a QR-verifiable certificate, instantly downloadable and authenticated against the league registry.</p>
+                        </div>
+                    </a>
+                                    <a href="news.html/live-brackets-go-digital-for-the-national-boxing-championship" class="card group overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+                        <div class="aspect-[16/9] bg-gradient-to-br from-ink-700 to-ink-950 p-5">
+                            <span class="chip bg-white/20 text-white backdrop-blur">Technology</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-ink-400">07 Jun 2026</p>
+                            <h3 class="mt-2 font-display text-lg font-700 leading-snug text-ink-900 group-hover:text-saffron-600">Live brackets go digital for the National Boxing Championship</h3>
+                            <p class="mt-2 line-clamp-2 text-sm text-ink-500">Fans can now follow every bout in real time as knockout brackets update live from the ring in Nahan.</p>
+                        </div>
+                    </a>
+                            </div>
+        </div>
+    </section>
+
+    
+    <section class="container-x pb-20">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-saffron-500 to-saffron-600 px-8 py-14 text-center text-white sm:px-16">
+            <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
+            <h2 class="relative font-display text-3xl font-900 sm:text-4xl">Your podium starts with a registration</h2>
+            <p class="relative mx-auto mt-3 max-w-2xl text-saffron-50">Create your athlete profile, get a unique ISL ID instantly, and enter any open event in minutes.</p>
+            <a href="register.html" class="btn relative mt-8 bg-ink-950 px-8 py-3.5 text-white hover:bg-ink-900">Register now — it's free</a>
+        </div>
+    </section>
+    </main>
+
+    <footer class="mt-24 bg-ink-950 text-ink-300">
+    <div class="container-x grid gap-10 py-16 md:grid-cols-4">
+        <div class="md:col-span-1">
+            <a href="index.html" class="inline-flex items-center gap-2.5">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+        IS<span class="text-victory-400">L</span>
+    </span>
+    <span class="leading-tight">
+        <span class="block font-display text-lg font-800 text-white">Indian Sports League</span>
+        <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-300">Season 2026</span>
+    </span>
+</a>
+            <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
+                A unified digital platform for India's national multi-sport competition — registration, scheduling, live results and verified certification.
+            </p>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Compete</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="sports.html" class="hover:text-saffron-400">Sports</a></li>
+                <li><a href="schedule.html" class="hover:text-saffron-400">Schedule &amp; fixtures</a></li>
+                <li><a href="standings.html" class="hover:text-saffron-400">Medal tally</a></li>
+                <li><a href="register.html" class="hover:text-saffron-400">Athlete registration</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">League</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="news.html" class="hover:text-saffron-400">News &amp; media</a></li>
+                <li><a href="certificates.html" class="hover:text-saffron-400">Verify a certificate</a></li>
+                <li><a href="admin-login.html" class="hover:text-saffron-400">Organiser login</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Partners</h4>
+            <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                <span class="rounded-lg bg-white/5 px-3 py-2">Sports Authority of India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">Khelo India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">Fit India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">National Federations</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-white/10">
+        <div class="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-ink-500 sm:flex-row">
+            <p>© 2026 Indian Sports League. Prototype for client demonstration.</p>
+            <p class="flex items-center gap-1.5">
+                <span class="inline-block h-2 w-2 rounded-full bg-victory-400"></span>
+                Tricolour by design · Built for Indian sport
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

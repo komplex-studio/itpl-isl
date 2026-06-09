@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boxing · ISL 2026</title>
+    <meta name="description" content="The Indian Sports League — national multi-sport competition. Athlete registration, live schedules, brackets, results and digital certification.">
+    <link rel="preload" as="style" href="assets/app-CTcM-v1l.css" /><link rel="stylesheet" href="assets/app-CTcM-v1l.css" /><script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script></head>
+<body class="min-h-screen bg-ink-50">
+    <header x-data="{ open: false }" class="sticky top-0 z-50 border-b border-ink-100 bg-white/85 backdrop-blur-md">
+    <nav class="container-x flex h-18 items-center justify-between py-3">
+        <a href="index.html" class="inline-flex items-center gap-2.5">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+        IS<span class="text-victory-400">L</span>
+    </span>
+    <span class="leading-tight">
+        <span class="block font-display text-lg font-800 text-ink-900">Indian Sports League</span>
+        <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-400">Season 2026</span>
+    </span>
+</a>
+
+        <div class="hidden items-center gap-1 lg:flex">
+                            <a href="sports.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Sports
+                </a>
+                            <a href="schedule.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Schedule
+                </a>
+                            <a href="schedule.html#brackets"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Brackets
+                </a>
+                            <a href="standings.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Standings
+                </a>
+                            <a href="news.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    News
+                </a>
+                            <a href="certificates.html"
+                   class="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-900">
+                    Certificates
+                </a>
+                    </div>
+
+        <div class="flex items-center gap-2">
+            <a href="register.html" class="btn-primary btn-sm hidden sm:inline-flex">
+                Register as athlete
+            </a>
+            <a href="admin-login.html" class="btn-ghost btn-sm hidden md:inline-flex">Admin</a>
+            <button @click="open = !open" class="grid h-10 w-10 place-items-center rounded-xl border border-ink-200 lg:hidden" aria-label="Menu">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div x-show="open" x-cloak class="border-t border-ink-100 bg-white lg:hidden">
+        <div class="container-x grid gap-1 py-4">
+                            <a href="sports.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Sports</a>
+                            <a href="schedule.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Schedule</a>
+                            <a href="schedule.html#brackets" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Brackets</a>
+                            <a href="standings.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Standings</a>
+                            <a href="news.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">News</a>
+                            <a href="certificates.html" class="rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-700 hover:bg-ink-50">Certificates</a>
+                        <a href="register.html" class="btn-primary mt-2">Register as athlete</a>
+            <a href="admin-login.html" class="btn-ghost mt-1">Admin panel</a>
+        </div>
+    </div>
+</header>
+
+    <main>
+            <section class="relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-950 text-white">
+    <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-saffron-500/15 blur-3xl"></div>
+    <div class="container-x relative py-14 sm:py-16">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-300">Knockout format</p>
+                <h1 class="mt-2 font-display text-4xl font-900 leading-tight sm:text-5xl">Boxing</h1>
+                    <p class="mt-3 max-w-2xl text-ink-200">National-level Boxing competition under the Indian Sports League, bringing together the country&#039;s finest talent across every state and union territory.</p>
+                            <div class="mt-6"><a href="register.html" class="btn-primary btn-sm">Register for Boxing</a></div>
+            </div>
+</section>
+
+    <section class="container-x py-16">
+        <div class="flex items-center gap-4">
+            <span class="text-5xl">🥊</span>
+            <div>
+                <h2 class="font-display text-2xl font-800 text-ink-900">Events in Boxing</h2>
+                <p class="text-sm text-ink-500">1 scheduled this season</p>
+            </div>
+        </div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+                            <a href="event.html" class="card group overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="bg-gradient-to-br from-saffron-600 to-ink-900 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <span class="text-3xl">🥊</span>
+                            <span class="chip bg-rose-100 text-rose-700">
+            <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500"></span>
+        Live now
+</span>
+                        </div>
+                        <h3 class="mt-4 font-display text-xl font-800">National Boxing Championship 2026</h3>
+                        <p class="mt-1 text-sm text-white/80">Nahan, Himachal Pradesh</p>
+                    </div>
+                    <div class="flex items-center justify-between p-5 text-sm">
+                        <span class="text-ink-500">28 Jun – 03 Jul 2026</span>
+                        <span class="font-semibold text-saffron-600 group-hover:text-saffron-700">View event →</span>
+                    </div>
+                </a>
+                    </div>
+    </section>
+    </main>
+
+    <footer class="mt-24 bg-ink-950 text-ink-300">
+    <div class="container-x grid gap-10 py-16 md:grid-cols-4">
+        <div class="md:col-span-1">
+            <a href="index.html" class="inline-flex items-center gap-2.5">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+        IS<span class="text-victory-400">L</span>
+    </span>
+    <span class="leading-tight">
+        <span class="block font-display text-lg font-800 text-white">Indian Sports League</span>
+        <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-300">Season 2026</span>
+    </span>
+</a>
+            <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
+                A unified digital platform for India's national multi-sport competition — registration, scheduling, live results and verified certification.
+            </p>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Compete</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="sports.html" class="hover:text-saffron-400">Sports</a></li>
+                <li><a href="schedule.html" class="hover:text-saffron-400">Schedule &amp; fixtures</a></li>
+                <li><a href="standings.html" class="hover:text-saffron-400">Medal tally</a></li>
+                <li><a href="register.html" class="hover:text-saffron-400">Athlete registration</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">League</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="news.html" class="hover:text-saffron-400">News &amp; media</a></li>
+                <li><a href="certificates.html" class="hover:text-saffron-400">Verify a certificate</a></li>
+                <li><a href="admin-login.html" class="hover:text-saffron-400">Organiser login</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Partners</h4>
+            <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                <span class="rounded-lg bg-white/5 px-3 py-2">Sports Authority of India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">Khelo India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">Fit India</span>
+                <span class="rounded-lg bg-white/5 px-3 py-2">National Federations</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-white/10">
+        <div class="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-ink-500 sm:flex-row">
+            <p>© 2026 Indian Sports League. Prototype for client demonstration.</p>
+            <p class="flex items-center gap-1.5">
+                <span class="inline-block h-2 w-2 rounded-full bg-victory-400"></span>
+                Tricolour by design · Built for Indian sport
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

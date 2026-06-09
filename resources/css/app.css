@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+
+    /* Brand — deep arena navy, saffron energy, victory green (Indian tricolour echo) */
+    --color-ink-50: #f4f6fb;
+    --color-ink-100: #e7ebf5;
+    --color-ink-200: #c7d0e6;
+    --color-ink-300: #9aa9cf;
+    --color-ink-400: #647596;
+    --color-ink-500: #3c4a6b;
+    --color-ink-600: #28324b;
+    --color-ink-700: #1a2238;
+    --color-ink-800: #111729;
+    --color-ink-900: #0b1020;
+    --color-ink-950: #060914;
+
+    --color-saffron-50: #fff5ed;
+    --color-saffron-100: #ffe7d2;
+    --color-saffron-200: #ffcaa0;
+    --color-saffron-300: #ffa566;
+    --color-saffron-400: #ff7d2e;
+    --color-saffron-500: #ff6b1a;
+    --color-saffron-600: #ed4e07;
+    --color-saffron-700: #c43a09;
+    --color-saffron-800: #9c2f0f;
+    --color-saffron-900: #7e2a10;
+
+    --color-victory-400: #2dd4a7;
+    --color-victory-500: #14b888;
+    --color-victory-600: #0c9670;
+    --color-victory-700: #0d7659;
+}
+
+@layer base {
+    [x-cloak] { display: none !important; }
+    body {
+        @apply bg-ink-50 text-ink-800 antialiased;
+    }
+    h1, h2, h3, h4, .font-display {
+        font-family: var(--font-display);
+        letter-spacing: -0.01em;
+    }
+}
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition focus:outline-none; }
+@utility btn-primary { @apply btn bg-saffron-500 px-6 py-3 text-white shadow-lg shadow-saffron-500/25 hover:bg-saffron-600; }
+@utility btn-dark { @apply btn bg-ink-900 px-6 py-3 text-white hover:bg-ink-800; }
+@utility btn-ghost { @apply btn border border-ink-200 bg-white px-6 py-3 text-ink-800 hover:border-ink-300 hover:bg-ink-50; }
+@utility btn-sm { @apply px-4 py-2 text-sm; }
+
+@utility card { @apply rounded-2xl border border-ink-100 bg-white shadow-sm; }
+
+@utility chip { @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold; }
+@utility chip-saffron { @apply chip bg-saffron-100 text-saffron-700; }
+@utility chip-victory { @apply chip bg-victory-500/10 text-victory-700; }
+@utility chip-ink { @apply chip bg-ink-100 text-ink-600; }
+
+@utility label { @apply mb-1.5 block text-sm font-semibold text-ink-700; }
+@utility input { @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-2.5 text-ink-900 placeholder:text-ink-400 focus:border-saffron-400 focus:ring-2 focus:ring-saffron-400/30; }
+
+@utility eyebrow { @apply text-xs font-bold uppercase tracking-[0.2em] text-saffron-600; }
+
+/* numeric font-weight aliases used throughout the templates */
+@utility font-600 { font-weight: 600; }
+@utility font-700 { font-weight: 700; }
+@utility font-800 { font-weight: 800; }
+@utility font-900 { font-weight: 900; }

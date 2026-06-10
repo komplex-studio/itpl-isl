@@ -1,7 +1,7 @@
 @props(['dark' => false])
 
 <a href="{{ route('home') }}" {{ $attributes->merge(['class' => 'inline-flex items-center gap-2.5']) }}>
-    <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none text-white shadow-lg shadow-saffron-500/30">
+    <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-900 leading-none tracking-tight whitespace-nowrap text-white shadow-lg shadow-saffron-500/30">
         IS<span class="text-victory-400">L</span>
     </span>
     <span class="leading-tight">

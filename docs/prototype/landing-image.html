@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home (Image concept) · ISL 2026</title>
+    <meta name="description" content="Indian Sports League — alternative image-led landing page concept.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Instrument Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        display: ['Archivo', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: {
+                            50: '#f4f6fb', 100: '#e7ebf5', 200: '#c7d0e6', 300: '#9aa9cf',
+                            400: '#647596', 500: '#3c4a6b', 600: '#28324b', 700: '#1a2238',
+                            800: '#111729', 900: '#0b1020', 950: '#060914',
+                        },
+                        saffron: {
+                            50: '#fff5ed', 100: '#ffe7d2', 200: '#ffcaa0', 300: '#ffa566',
+                            400: '#ff7d2e', 500: '#ff6b1a', 600: '#ed4e07', 700: '#c43a09',
+                            800: '#9c2f0f', 900: '#7e2a10',
+                        },
+                        victory: { 400: '#2dd4a7', 500: '#14b888', 600: '#0c9670', 700: '#0d7659' },
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body { font-family: 'Instrument Sans', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Archivo', sans-serif; }
+        /* Photos sit on a brand gradient so the layout survives if an image fails to load. */
+        .photo { background-size: cover; background-position: center; }
+    </style>
+</head>
+<body class="min-h-screen bg-ink-950 text-white">
+
+    <!-- ===== Nav ===== -->
+    <header class="absolute inset-x-0 top-0 z-30">
+        <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+            <a href="index.html" class="inline-flex items-center gap-2.5">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-saffron-500 to-saffron-700 font-display text-lg font-black leading-none text-white shadow-lg shadow-saffron-500/30">
+                    IS<span class="text-victory-400">L</span>
+                </span>
+                <span class="leading-tight">
+                    <span class="block font-display text-lg font-extrabold text-white">Indian Sports League</span>
+                    <span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">Season 2026</span>
+                </span>
+            </a>
+            <div class="hidden items-center gap-1 lg:flex">
+                <a href="sports.html" class="rounded-full px-3.5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white">Sports</a>
+                <a href="schedule.html" class="rounded-full px-3.5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white">Schedule</a>
+                <a href="standings.html" class="rounded-full px-3.5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white">Standings</a>
+                <a href="news.html" class="rounded-full px-3.5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white">News</a>
+                <a href="certificates.html" class="rounded-full px-3.5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white">Certificates</a>
+            </div>
+            <a href="register.html" class="rounded-full bg-saffron-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-saffron-500/30 transition hover:bg-saffron-600">Register as athlete</a>
+        </nav>
+    </header>
+
+    <!-- ===== Hero — full-bleed action photo ===== -->
+    <section class="relative min-h-screen overflow-hidden bg-ink-950">
+        <!-- photograph -->
+        <div class="photo absolute inset-0 scale-105 bg-gradient-to-br from-ink-800 to-ink-950"
+             style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=2400&q=85');background-position:center 30%;"></div>
+        <!-- cinematic scrims: left readability + bottom fade + top nav scrim -->
+        <div class="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/75 to-ink-950/10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-ink-950/60"></div>
+        <!-- saffron accent glow -->
+        <div class="absolute -left-32 top-1/3 h-[34rem] w-[34rem] rounded-full bg-saffron-500/20 blur-[120px]"></div>
+        <div class="absolute right-0 top-0 h-96 w-96 rounded-full bg-victory-500/10 blur-[120px]"></div>
+        <!-- vignette -->
+        <div class="pointer-events-none absolute inset-0" style="box-shadow:inset 0 0 220px 40px rgba(6,9,20,0.9);"></div>
+        <!-- film grain -->
+        <div class="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay"
+             style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>');"></div>
+
+        <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-28 pb-16 lg:px-8">
+            <span class="inline-flex w-fit items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-semibold tracking-wide backdrop-blur-md">
+                <span class="relative flex h-2 w-2">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-victory-400 opacity-75"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-victory-400"></span>
+                </span>
+                Season 2026 · 8 disciplines · 28 states
+            </span>
+            <h1 class="mt-7 max-w-3xl font-display text-6xl font-black leading-[0.9] tracking-tight [text-shadow:0_2px_40px_rgba(0,0,0,0.5)] sm:text-7xl lg:text-8xl">
+                Where India<br><span class="bg-gradient-to-r from-saffron-300 via-saffron-400 to-saffron-500 bg-clip-text text-transparent">competes.</span>
+            </h1>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+                One platform for the nation's biggest multi-sport league — register as an athlete, follow live brackets and results, and download verified certificates.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-3">
+                <a href="register.html" class="group inline-flex items-center gap-2 rounded-full bg-saffron-500 px-7 py-3.5 font-bold text-white shadow-xl shadow-saffron-500/30 transition hover:bg-saffron-600 hover:shadow-saffron-500/50">
+                    Register as athlete
+                    <span class="transition group-hover:translate-x-0.5">→</span>
+                </a>
+                <a href="schedule.html" class="rounded-full border border-white/15 bg-white/5 px-7 py-3.5 font-bold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/10">View schedule</a>
+            </div>
+
+            <!-- stat strip -->
+            <div class="mt-16 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-8 sm:grid-cols-4">
+                <div><p class="font-display text-4xl font-black text-saffron-400 [text-shadow:0_2px_30px_rgba(255,107,26,0.3)]">48+</p><p class="mt-1 text-sm font-medium text-white/55">Registered athletes</p></div>
+                <div><p class="font-display text-4xl font-black text-saffron-400 [text-shadow:0_2px_30px_rgba(255,107,26,0.3)]">6</p><p class="mt-1 text-sm font-medium text-white/55">Live events</p></div>
+                <div><p class="font-display text-4xl font-black text-saffron-400 [text-shadow:0_2px_30px_rgba(255,107,26,0.3)]">8</p><p class="mt-1 text-sm font-medium text-white/55">Sports</p></div>
+                <div><p class="font-display text-4xl font-black text-saffron-400 [text-shadow:0_2px_30px_rgba(255,107,26,0.3)]">70+</p><p class="mt-1 text-sm font-medium text-white/55">Entries this season</p></div>
+            </div>
+        </div>
+
+        <!-- scroll cue -->
+        <div class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/40 lg:flex">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.2em]">Scroll</span>
+            <span class="h-8 w-px bg-gradient-to-b from-white/40 to-transparent"></span>
+        </div>
+    </section>
+
+    <!-- ===== Sports — photo cards ===== -->
+    <section class="bg-ink-50 py-20 text-ink-900">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="flex items-end justify-between">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-saffron-600">Disciplines</p>
+                    <h2 class="mt-2 font-display text-3xl font-extrabold sm:text-4xl">Eight sports, one league</h2>
+                </div>
+                <a href="sports.html" class="hidden text-sm font-semibold text-saffron-600 hover:text-saffron-700 sm:inline">All sports →</a>
+            </div>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- Boxing -->
+                <a href="sport-boxing.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-ink-700 to-ink-950">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Boxing</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">Knockout</p></div>
+                </a>
+                <!-- Wrestling -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-saffron-600 to-saffron-800">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Wrestling</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">Knockout</p></div>
+                </a>
+                <!-- Kabaddi -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-victory-600 to-ink-900">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Kabaddi</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">League</p></div>
+                </a>
+                <!-- Athletics -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-ink-700 to-ink-950">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Athletics</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">League</p></div>
+                </a>
+                <!-- Badminton -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-saffron-500 to-saffron-700">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Badminton</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">Knockout</p></div>
+                </a>
+                <!-- Weightlifting -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-ink-700 to-ink-950">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Weightlifting</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">League</p></div>
+                </a>
+                <!-- Table Tennis -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-victory-600 to-ink-900">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1611251135345-18c56206b863?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Table Tennis</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">Knockout</p></div>
+                </a>
+                <!-- Kho Kho -->
+                <a href="sports.html" class="group relative block h-64 overflow-hidden rounded-3xl bg-gradient-to-br from-saffron-600 to-ink-900">
+                    <div class="photo absolute inset-0 transition duration-500 group-hover:scale-105" style="background-image:url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-5"><h3 class="font-display text-xl font-extrabold text-white">Kho Kho</h3><p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/60">League</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Featured split banner ===== -->
+    <section class="bg-ink-50 pb-20 text-ink-900">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="grid items-stretch gap-6 overflow-hidden rounded-3xl bg-ink-950 text-white lg:grid-cols-2">
+                <div class="photo relative min-h-[22rem] bg-gradient-to-br from-saffron-600 to-ink-900" style="background-image:url('https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&w=1200&q=80');">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent to-ink-950/40 lg:bg-gradient-to-l"></div>
+                    <span class="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-victory-500/90 px-3 py-1 text-xs font-bold uppercase tracking-wider">Ongoing</span>
+                </div>
+                <div class="flex flex-col justify-center p-8 sm:p-12">
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-saffron-400">Featured event · Boxing</p>
+                    <h2 class="mt-2 font-display text-3xl font-extrabold leading-tight sm:text-4xl">National Boxing Championship 2026</h2>
+                    <dl class="mt-8 grid grid-cols-2 gap-6 text-sm">
+                        <div><dt class="text-white/50">Venue</dt><dd class="mt-0.5 font-semibold">New Delhi, Delhi</dd></div>
+                        <div><dt class="text-white/50">Dates</dt><dd class="mt-0.5 font-semibold">12–18 Jun 2026</dd></div>
+                        <div><dt class="text-white/50">Prize pool</dt><dd class="mt-0.5 font-semibold">₹25.0L</dd></div>
+                        <div><dt class="text-white/50">Format</dt><dd class="mt-0.5 font-semibold">Knockout</dd></div>
+                    </dl>
+                    <a href="event.html" class="mt-9 w-fit rounded-full bg-saffron-500 px-7 py-3.5 font-bold text-white shadow-lg shadow-saffron-500/30 transition hover:bg-saffron-600">Open event hub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Medal tally ===== -->
+    <section class="bg-ink-50 pb-20 text-ink-900">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="rounded-3xl bg-ink-950 p-8 text-white sm:p-12">
+                <div class="flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                        <p class="text-sm font-bold uppercase tracking-[0.18em] text-saffron-400">Medal tally</p>
+                        <h2 class="mt-2 font-display text-3xl font-extrabold">Leading states · Season 2026</h2>
+                    </div>
+                    <a href="standings.html" class="rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold transition hover:bg-white/20">Full standings →</a>
+                </div>
+                <div class="mt-8 overflow-hidden rounded-2xl border border-white/10">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-white/5 text-xs uppercase tracking-wider text-white/50">
+                            <tr><th class="px-5 py-3">Rank</th><th class="px-5 py-3">State</th><th class="px-5 py-3 text-center">🥇</th><th class="px-5 py-3 text-center">🥈</th><th class="px-5 py-3 text-center">🥉</th><th class="px-5 py-3 text-right">Total</th></tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr class="bg-saffron-500/10"><td class="px-5 py-3 font-display font-extrabold text-saffron-400">1</td><td class="px-5 py-3 font-semibold">Haryana</td><td class="px-5 py-3 text-center">14</td><td class="px-5 py-3 text-center">9</td><td class="px-5 py-3 text-center">7</td><td class="px-5 py-3 text-right font-display font-extrabold text-saffron-400">30</td></tr>
+                            <tr><td class="px-5 py-3 font-display font-extrabold text-white/60">2</td><td class="px-5 py-3 font-semibold">Maharashtra</td><td class="px-5 py-3 text-center">11</td><td class="px-5 py-3 text-center">12</td><td class="px-5 py-3 text-center">8</td><td class="px-5 py-3 text-right font-display font-extrabold text-saffron-400">31</td></tr>
+                            <tr><td class="px-5 py-3 font-display font-extrabold text-white/60">3</td><td class="px-5 py-3 font-semibold">Punjab</td><td class="px-5 py-3 text-center">9</td><td class="px-5 py-3 text-center">7</td><td class="px-5 py-3 text-center">10</td><td class="px-5 py-3 text-right font-display font-extrabold text-saffron-400">26</td></tr>
+                            <tr><td class="px-5 py-3 font-display font-extrabold text-white/60">4</td><td class="px-5 py-3 font-semibold">Kerala</td><td class="px-5 py-3 text-center">8</td><td class="px-5 py-3 text-center">6</td><td class="px-5 py-3 text-center">9</td><td class="px-5 py-3 text-right font-display font-extrabold text-saffron-400">23</td></tr>
+                            <tr><td class="px-5 py-3 font-display font-extrabold text-white/60">5</td><td class="px-5 py-3 font-semibold">Karnataka</td><td class="px-5 py-3 text-center">7</td><td class="px-5 py-3 text-center">8</td><td class="px-5 py-3 text-center">6</td><td class="px-5 py-3 text-right font-display font-extrabold text-saffron-400">21</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== News ===== -->
+    <section class="bg-white py-20 text-ink-900">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="flex items-end justify-between">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-saffron-600">Newsroom</p>
+                    <h2 class="mt-2 font-display text-3xl font-extrabold">Latest from the league</h2>
+                </div>
+                <a href="news.html" class="hidden text-sm font-semibold text-saffron-600 hover:text-saffron-700 sm:inline">All news →</a>
+            </div>
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+                <a href="news-article.html" class="group block overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="photo relative aspect-[16/9] bg-gradient-to-br from-saffron-500 to-saffron-700" style="background-image:url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=80');">
+                        <span class="absolute left-4 top-4 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">Results</span>
+                    </div>
+                    <div class="p-5"><p class="text-xs text-ink-400">08 Jun 2026</p><h3 class="mt-2 font-display text-lg font-bold leading-snug group-hover:text-saffron-600">Record entries as Season 2026 swimming heats wrap up</h3></div>
+                </a>
+                <a href="news-article.html" class="group block overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="photo relative aspect-[16/9] bg-gradient-to-br from-victory-500 to-ink-800" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=80');">
+                        <span class="absolute left-4 top-4 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">Feature</span>
+                    </div>
+                    <div class="p-5"><p class="text-xs text-ink-400">05 Jun 2026</p><h3 class="mt-2 font-display text-lg font-bold leading-snug group-hover:text-saffron-600">How the knockout brackets are shaping up this season</h3></div>
+                </a>
+                <a href="news-article.html" class="group block overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="photo relative aspect-[16/9] bg-gradient-to-br from-ink-700 to-ink-950" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80');">
+                        <span class="absolute left-4 top-4 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">Athletes</span>
+                    </div>
+                    <div class="p-5"><p class="text-xs text-ink-400">02 Jun 2026</p><h3 class="mt-2 font-display text-lg font-bold leading-snug group-hover:text-saffron-600">First-time registrants: a quick guide to your ISL ID</h3></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="bg-white pb-20 text-ink-900">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl">
+                <div class="photo absolute inset-0 bg-gradient-to-r from-saffron-500 to-saffron-700" style="background-image:url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="absolute inset-0 bg-saffron-600/85"></div>
+                <div class="relative px-8 py-16 text-center text-white sm:px-16">
+                    <h2 class="font-display text-3xl font-black sm:text-4xl">Your podium starts with a registration</h2>
+                    <p class="mx-auto mt-3 max-w-2xl text-saffron-50">Create your athlete profile, get a unique ISL ID instantly, and enter any open event in minutes.</p>
+                    <a href="register.html" class="mt-8 inline-block rounded-full bg-ink-950 px-8 py-3.5 font-bold text-white transition hover:bg-ink-900">Register now — it's free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-ink-950 py-10 text-center text-sm text-white/50">
+        <p>Indian Sports League · Season 2026 — alternative image-led landing concept (prototype).</p>
+        <p class="mt-2"><a href="index.html" class="font-semibold text-saffron-400 hover:text-saffron-300">← Back to the current home page</a></p>
+    </footer>
+
+</body>
+</html>

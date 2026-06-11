@@ -3,6 +3,10 @@
 @section('heading', 'Events')
 
 @section('content')
+    <div class="mb-5 flex justify-end">
+        <a href="{{ route('admin.events.create') }}" class="btn-primary btn-sm">+ New event</a>
+    </div>
+
     <div class="card overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full text-left text-sm">
@@ -14,7 +18,8 @@
                         <th class="px-5 py-3 text-center">Entries</th>
                         <th class="px-5 py-3 text-center">Fixtures</th>
                         <th class="px-5 py-3">Status</th>
-                        <th class="px-5 py-3 text-right">Reg.</th>
+                        <th class="px-5 py-3 text-center">Reg.</th>
+                        <th class="px-5 py-3 text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-ink-100">
@@ -34,12 +39,18 @@
                             <td class="px-5 py-3 text-center font-semibold text-ink-800">{{ $event->registrations_count }}</td>
                             <td class="px-5 py-3 text-center font-semibold text-ink-800">{{ $event->fixtures_count }}</td>
                             <td class="px-5 py-3"><x-status-badge :status="$event->status" /></td>
-                            <td class="px-5 py-3 text-right">
+                            <td class="px-5 py-3 text-center">
                                 @if ($event->registration_open)
                                     <span class="chip-victory">Open</span>
                                 @else
                                     <span class="chip-ink">Closed</span>
                                 @endif
+                            </td>
+                            <td class="px-5 py-3">
+                                <div class="flex justify-end gap-1.5">
+                                    <a href="{{ route('admin.events.edit', $event) }}" class="chip border border-ink-200 bg-white text-ink-700 hover:bg-ink-50">Edit</a>
+                                    <x-admin.delete-button :action="route('admin.events.destroy', $event)" label="Delete {{ $event->name }}?" />
+                                </div>
                             </td>
                         </tr>
                     @endforeach

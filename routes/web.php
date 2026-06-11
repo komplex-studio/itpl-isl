@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CertificateController as AdminCertificateControll
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\FixtureController as AdminFixtureController;
+use App\Http\Controllers\Admin\MedalTallyController as AdminMedalTallyController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationController;
 use App\Http\Controllers\Admin\SportController as AdminSportController;
@@ -54,17 +55,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('sports', [AdminSportController::class, 'index'])->name('sports.index');
-        Route::get('events', [AdminEventController::class, 'index'])->name('events.index');
-        Route::get('athletes', [AdminAthleteController::class, 'index'])->name('athletes.index');
+        // Full CRUD for every content entity.
+        Route::resource('sports', AdminSportController::class)->except(['show']);
+        Route::resource('events', AdminEventController::class)->except(['show']);
+        Route::resource('athletes', AdminAthleteController::class)->except(['show']);
+        Route::resource('news', AdminNewsController::class)->except(['show']);
+        Route::resource('certificates', AdminCertificateController::class)->except(['show']);
+        Route::resource('medal-tallies', AdminMedalTallyController::class)
+            ->except(['show'])->parameters(['medal-tallies' => 'medalTally']);
 
-        Route::get('registrations', [AdminRegistrationController::class, 'index'])->name('registrations.index');
-        Route::patch('registrations/{registration}', [AdminRegistrationController::class, 'update'])->name('registrations.update');
+        // Registrations & fixtures keep their inline quick-actions alongside full CRUD.
+        Route::resource('registrations', AdminRegistrationController::class)->except(['show']);
+        Route::patch('registrations/{registration}/status', [AdminRegistrationController::class, 'status'])->name('registrations.status');
 
-        Route::get('fixtures', [AdminFixtureController::class, 'index'])->name('fixtures.index');
-        Route::patch('fixtures/{fixture}', [AdminFixtureController::class, 'update'])->name('fixtures.update');
-
-        Route::get('certificates', [AdminCertificateController::class, 'index'])->name('certificates.index');
-        Route::get('news', [AdminNewsController::class, 'index'])->name('news.index');
+        Route::resource('fixtures', AdminFixtureController::class)->except(['show']);
+        Route::patch('fixtures/{fixture}/result', [AdminFixtureController::class, 'result'])->name('fixtures.result');
     });
 });

@@ -1,6 +1,11 @@
-@props(['eyebrow' => null, 'title', 'subtitle' => null, 'gradient' => 'from-ink-800 to-ink-950'])
+@props(['eyebrow' => null, 'title', 'subtitle' => null, 'gradient' => 'from-ink-800 to-ink-950', 'image' => null])
 
-<section class="relative overflow-hidden bg-gradient-to-br {{ $gradient }} text-white">
+<section class="relative overflow-hidden bg-cover bg-center bg-gradient-to-br {{ $gradient }} text-white"
+    @if ($image) style="background-image:url('{{ $image }}');background-position:center 35%;" @endif>
+    @if ($image)
+        <div class="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/80 to-ink-950/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 to-transparent"></div>
+    @endif
     <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-saffron-500/15 blur-3xl"></div>
     <div class="container-x relative py-14 sm:py-16">
         @if ($eyebrow)

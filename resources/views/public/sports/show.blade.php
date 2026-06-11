@@ -2,7 +2,7 @@
 @section('title', $sport->name)
 
 @section('content')
-    <x-page-header :eyebrow="ucfirst($sport->format).' format'" :title="$sport->name" :subtitle="$sport->description">
+    <x-page-header :eyebrow="ucfirst($sport->format).' format'" :title="$sport->icon.' '.$sport->name" :subtitle="$sport->description" :image="$sport->image">
         <a href="{{ route('register.create') }}" class="btn-primary btn-sm">Register for {{ $sport->name }}</a>
     </x-page-header>
 
@@ -18,13 +18,15 @@
         <div class="mt-8 grid gap-5 md:grid-cols-2">
             @forelse ($sport->events as $event)
                 <a href="{{ route('events.show', $event) }}" class="card group overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
-                    <div class="bg-gradient-to-br {{ $event->gradient }} p-6 text-white">
-                        <div class="flex items-center justify-between">
-                            <span class="text-3xl">{{ $sport->icon }}</span>
+                    <div class="relative bg-cover bg-center bg-gradient-to-br {{ $event->gradient }} p-6 text-white"
+                         @if ($event->image) style="background-image:url('{{ $event->image }}');" @endif>
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/40 to-ink-950/30"></div>
+                        <div class="relative flex items-center justify-between">
+                            <span class="text-3xl drop-shadow">{{ $sport->icon }}</span>
                             <x-status-badge :status="$event->status" />
                         </div>
-                        <h3 class="mt-4 font-display text-xl font-800">{{ $event->name }}</h3>
-                        <p class="mt-1 text-sm text-white/80">{{ $event->city }}, {{ $event->state }}</p>
+                        <h3 class="relative mt-10 font-display text-xl font-800">{{ $event->name }}</h3>
+                        <p class="relative mt-1 text-sm text-white/80">{{ $event->city }}, {{ $event->state }}</p>
                     </div>
                     <div class="flex items-center justify-between p-5 text-sm">
                         <span class="text-ink-500">{{ $event->date_range }}</span>

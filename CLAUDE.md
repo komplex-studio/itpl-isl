@@ -16,9 +16,11 @@ data model, and design system:
    certificates, news.
 
 The data is **seeded demo content** (a generic multi-sport season across 8 disciplines) so both
-prototypes are fully navigable without manual data entry. This is a demo build, not production —
-much of the admin is read-only lists plus a few working write actions (registration approve/reject,
-fixture result entry) that demonstrate the workflow.
+prototypes are fully navigable without manual data entry. This is a demo build, not production, but
+the admin is **fully CRUD-capable**: every entity (sports, events, news, athletes, certificates,
+registrations, fixtures, medal tally) has working create / edit / delete, on top of the inline
+quick-actions (registration approve/reject → `registrations.status`, fixture result entry →
+`fixtures.result`).
 
 ## Commands
 
@@ -93,16 +95,23 @@ Standard Laravel MVC, organised by audience:
     **`status-badge`** (maps a status string → labelled pill; the single source of truth for status
     styling — reuse it rather than hand-rolling badges).
   - `public/` and `admin/` mirror the controller split.
-- **No uploaded images anywhere** — athlete avatars are initials on gradients; event/news "images"
-  are CSS gradients stored as Tailwind class strings in a `gradient` column. Keep this approach for
-  new demo content (self-contained, no asset pipeline for media).
+- **Image-led landing concept (client-approved).** The public site is photo-driven: `sports`,
+  `events` and `news` each carry a nullable **`image`** column (an absolute, hotlink-stable photo
+  URL — Unsplash for generic disciplines, **Wikimedia Commons** for the India-specific Kabaddi and
+  Kusti so they read true). The curated set lives in `DatabaseSeeder::IMAGES`. The existing
+  **`gradient`** column is kept as a graceful fallback — every photo `<div>` layers the image over
+  its gradient (`bg-cover bg-center bg-gradient-to-br …`), so the layout survives a failed/missing
+  image. There are still **no uploaded image files in the repo** — images are remote URLs only.
+- **Athlete avatars remain initials on gradients** (no photos) via the `avatar` component.
 
 ### Data model (`app/Models`, migrations `database/migrations/2026_01_01_*`)
 
 - `Sport` → has many `Event`. `format` is `knockout|league`; `icon` is an emoji; `color` is a brand
-  token name.
+  token name; `image` is the photo URL. The season's eight disciplines are **Boxing, Athletics,
+  Kabaddi, Karate, Football, Volleyball, Kusti and Badminton**.
 - `Event` → belongs to `Sport`; has many `Registration`, `Fixture`, `Certificate`. `status` is
-  `upcoming|ongoing|completed`. `date_range` accessor formats the start/end span.
+  `upcoming|ongoing|completed`. `date_range` accessor formats the start/end span; `image` is the
+  hero photo (falls back to the sport's image / the `gradient` column in views).
 - `Athlete` → has many `Registration`, `Certificate`. **Route-keyed by `code`** (the unique ISL ID,
   e.g. `ISL26-004213`). `initials` accessor drives the avatar component.
 - `Registration` → `Athlete`×`Event` entry; `status` is `pending|approved|rejected`.
@@ -123,5 +132,11 @@ add ad-hoc seeders) when you need more sample content, and re-run `migrate:fresh
   `layouts.public`; lead with an `<x-page-header>`.
 - Adding an admin screen: add to the `auth` group in `web.php`, add the controller under `Admin/`,
   add the nav entry in the `$nav` array in `admin/layout.blade.php`, and extend `admin.layout`.
+- Admin CRUD pattern: register with `Route::resource(...)->except(['show'])`; controllers stay thin
+  (validate → slug/code/number auto-gen → flash → redirect to index). Views follow
+  `admin/<entity>/{index,create,edit}.blade.php` where create & edit both `@include` a shared
+  `form.blade.php` (passed `$action`, `$method`, `$submit`). Index rows use `<x-admin.delete-button>`
+  (confirm + DELETE form) and link to `…edit`. Validation errors render from the layout's `$errors`
+  block; success uses `session('flash')`.
 - Rebuild assets (`npm run build`, or run `npm run dev`) after adding new Tailwind classes — v4
   scans templates at build time, and unscanned classes silently produce no CSS.

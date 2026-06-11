@@ -2,7 +2,12 @@
 @section('title', $article->title)
 
 @section('content')
-    <section class="relative overflow-hidden bg-gradient-to-br {{ $article->gradient }} text-white">
+    <section class="relative overflow-hidden bg-cover bg-center bg-gradient-to-br {{ $article->gradient }} text-white"
+        @if ($article->image) style="background-image:url('{{ $article->image }}');background-position:center 35%;" @endif>
+        @if ($article->image)
+            <div class="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 to-transparent"></div>
+        @endif
         <div class="container-x relative py-16">
             <a href="{{ route('news.index') }}" class="text-sm text-white/80 hover:text-white">← All news</a>
             <span class="chip mt-5 bg-white/20 text-white backdrop-blur">{{ $article->category }}</span>
@@ -26,7 +31,8 @@
             <div class="mt-4 space-y-4">
                 @foreach ($more as $item)
                     <a href="{{ route('news.show', $item) }}" class="group flex gap-3">
-                        <span class="h-16 w-20 shrink-0 rounded-xl bg-gradient-to-br {{ $item->gradient }}"></span>
+                        <span class="h-16 w-20 shrink-0 rounded-xl bg-cover bg-center bg-gradient-to-br {{ $item->gradient }}"
+                              @if ($item->image) style="background-image:url('{{ $item->image }}');" @endif></span>
                         <div>
                             <p class="text-xs text-ink-400">{{ $item->published_at->format('d M Y') }}</p>
                             <p class="text-sm font-semibold leading-snug text-ink-800 group-hover:text-saffron-600">{{ $item->title }}</p>

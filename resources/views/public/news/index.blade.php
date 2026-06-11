@@ -9,8 +9,10 @@
 
         @if ($lead)
             <a href="{{ route('news.show', $lead) }}" class="card group grid overflow-hidden md:grid-cols-2">
-                <div class="bg-gradient-to-br {{ $lead->gradient }} p-10 md:min-h-72">
-                    <span class="chip bg-white/20 text-white backdrop-blur">{{ $lead->category }}</span>
+                <div class="relative bg-cover bg-center bg-gradient-to-br {{ $lead->gradient }} p-10 md:min-h-72"
+                     @if ($lead->image) style="background-image:url('{{ $lead->image }}');" @endif>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ink-950/40 to-transparent"></div>
+                    <span class="relative chip bg-white/20 text-white backdrop-blur">{{ $lead->category }}</span>
                 </div>
                 <div class="flex flex-col justify-center p-8">
                     <p class="text-xs text-ink-400">{{ $lead->published_at->format('d M Y') }}</p>
@@ -24,8 +26,10 @@
         <div class="mt-8 grid gap-6 md:grid-cols-3">
             @foreach ($rest as $article)
                 <a href="{{ route('news.show', $article) }}" class="card group overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
-                    <div class="aspect-[16/9] bg-gradient-to-br {{ $article->gradient }} p-5">
-                        <span class="chip bg-white/20 text-white backdrop-blur">{{ $article->category }}</span>
+                    <div class="relative aspect-[16/9] bg-cover bg-center bg-gradient-to-br {{ $article->gradient }} p-5"
+                         @if ($article->image) style="background-image:url('{{ $article->image }}');" @endif>
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink-950/40 to-transparent"></div>
+                        <span class="relative chip bg-white/20 text-white backdrop-blur">{{ $article->category }}</span>
                     </div>
                     <div class="p-5">
                         <p class="text-xs text-ink-400">{{ $article->published_at->format('d M Y') }}</p>

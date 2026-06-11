@@ -3,7 +3,12 @@
 
 @section('content')
     {{-- Event hero --}}
-    <section class="relative overflow-hidden bg-gradient-to-br {{ $event->gradient }} text-white">
+    <section class="relative overflow-hidden bg-cover bg-center bg-gradient-to-br {{ $event->gradient }} text-white"
+        @if ($event->image) style="background-image:url('{{ $event->image }}');background-position:center 35%;" @endif>
+        @if ($event->image)
+            <div class="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 to-transparent"></div>
+        @endif
         <div class="absolute -right-20 -top-24 h-80 w-80 rounded-full bg-saffron-500/20 blur-3xl"></div>
         <div class="container-x relative py-14">
             <a href="{{ route('schedule') }}" class="text-sm text-ink-200 hover:text-white">← Back to schedule</a>

@@ -22,6 +22,7 @@
                 @endforeach
             </select>
         </form>
+        <a href="{{ route('admin.registrations.create') }}" class="btn-primary btn-sm">+ New registration</a>
     </div>
 
     <div class="card overflow-hidden">
@@ -56,19 +57,21 @@
                             <td class="px-5 py-3">
                                 <div class="flex justify-end gap-1.5">
                                     @if ($reg->status !== 'approved')
-                                        <form method="POST" action="{{ route('admin.registrations.update', $reg) }}">
+                                        <form method="POST" action="{{ route('admin.registrations.status', $reg) }}">
                                             @csrf @method('PATCH')
                                             <input type="hidden" name="status" value="approved">
                                             <button class="chip bg-victory-500 text-white hover:bg-victory-600">Approve</button>
                                         </form>
                                     @endif
                                     @if ($reg->status !== 'rejected')
-                                        <form method="POST" action="{{ route('admin.registrations.update', $reg) }}">
+                                        <form method="POST" action="{{ route('admin.registrations.status', $reg) }}">
                                             @csrf @method('PATCH')
                                             <input type="hidden" name="status" value="rejected">
                                             <button class="chip bg-white text-rose-600 border border-rose-200 hover:bg-rose-50">Reject</button>
                                         </form>
                                     @endif
+                                    <a href="{{ route('admin.registrations.edit', $reg) }}" class="chip border border-ink-200 bg-white text-ink-700 hover:bg-ink-50">Edit</a>
+                                    <x-admin.delete-button :action="route('admin.registrations.destroy', $reg)" label="Delete this registration?" />
                                 </div>
                             </td>
                         </tr>

@@ -15,6 +15,7 @@
         ['Fixtures & results', 'admin.fixtures.index', '🥊'],
         ['Athletes', 'admin.athletes.index', '🪪'],
         ['Sports', 'admin.sports.index', '🏅'],
+        ['Medal tally', 'admin.medal-tallies.index', '🏆'],
         ['Certificates', 'admin.certificates.index', '🎖️'],
         ['News', 'admin.news.index', '📰'],
     ];
@@ -70,6 +71,16 @@
             @if (session('flash'))
                 <div class="mb-5 rounded-xl border border-victory-500/30 bg-victory-500/10 px-4 py-3 text-sm font-semibold text-victory-700">
                     {{ session('flash') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="mb-5 rounded-xl border border-rose-300 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+                    <p class="font-semibold">Please fix the following:</p>
+                    <ul class="mt-1 list-disc pl-5">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
             @yield('content')
